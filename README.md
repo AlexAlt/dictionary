@@ -16,7 +16,7 @@ Create your own dictionary by adding words and definitions to your app
 * Open the app in your web browser
 * Start Defining!!!
 
-_Make sure you have those gems! This app won't run without Sinatra and will be a pain without Sinatra-contrib. If you don't want to do that, follow this Heroku link:_
+_Make sure you have those gems! This app won't run without Sinatra and will be a pain without Sinatra-contrib. If you don't want to do that, follow this Heroku link: https://obscure-everglades-4363.herokuapp.com/_
 
 ## Technologies Used
 
