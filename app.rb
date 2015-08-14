@@ -19,3 +19,8 @@ get('/word_list') do
   @all_words = Word.all()
   erb(:word_list)
 end
+
+get('/word/:id') do
+  @word = Word.find(params.fetch('id').to_i())
+  erb(:word)
+end
