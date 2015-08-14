@@ -56,4 +56,14 @@ describe(Definition) do
       expect(test_definition.id()).to(eq(1))
     end
   end
+
+  describe('.find') do
+    it('finds a definition using its id') do
+      test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of the color red")
+      test_definition.save()
+      test_definition2 = Definition.new(:part_of_speech => "adjetivo", :language => "Spanish", :description => "del color rojo")
+      test_definition2.save()
+      expect(Definition.find(1)).to(eq(test_definition))
+    end
+  end
 end
