@@ -5,6 +5,6 @@ class Definition
   define_method(:initialize) do |attributes|
     @part_of_speech = attributes.fetch(:part_of_speech)
     @language = attributes.fetch(:language)
-    @definition = attributes.fetch(:description)
+    @description = attributes.fetch(:description)
   end
 end

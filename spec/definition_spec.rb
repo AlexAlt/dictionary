@@ -4,15 +4,22 @@ require('definition')
 describe(Definition) do
   describe('#part_of_speech') do
     it('returns the part of speech') do
-      test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of a color red")
+      test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of the color red")
       expect(test_definition.part_of_speech()).to(eq("adjective"))
     end
   end
 
-   describe('#language') do
+  describe('#language') do
     it('returns the language') do
-      test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of a color red")
+      test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of the color red")
       expect(test_definition.language()).to(eq("English"))
+    end
+  end
+
+  describe('#description') do
+    it('returns the language') do
+      test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of the color red")
+      expect(test_definition.description()).to(eq("of the color red"))
     end
   end
 end
