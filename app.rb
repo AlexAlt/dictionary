@@ -32,12 +32,12 @@ get('/word/:id/new_definition/new') do
 end
 
 post('/new_definition') do
-  @word = Word.find(params.fetch('id').to_i())
-  id = params.fetch('id')
   description = params.fetch('description')
   part_of_speech = params.fetch('part_of_speech')
   language = params.fetch('language')
   new_definition = Definition.new(:part_of_speech => part_of_speech, :language => language, :description => description)
+  id = params.fetch('id')
+  @word = Word.find(params.fetch('id').to_i())
   @word.add_definition(new_definition)
   redirect("/word/#{id}")
 end

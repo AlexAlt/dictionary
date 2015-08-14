@@ -1,11 +1,12 @@
 class Word
 
   @@all_words = []
-  @@all_definitions = []
+  
 
   define_method(:initialize) do |word|
     @word = word
     @id = @@all_words.length().+(1)
+    @all_definitions = []
   end
 
   define_method(:show) do
@@ -39,10 +40,10 @@ class Word
   end
 
   define_method(:definitions) do
-    @@all_definitions
+    @all_definitions
   end
 
   define_method(:add_definition) do |definition|
-    @@all_definitions.push(definition)
+    @all_definitions.push(definition)
   end
 end
