@@ -5,6 +5,7 @@ require('./lib/word')
 also_reload('lib/**/*.rb')
 
 get('/') do 
+  @all_words = Word.all()
   erb(:index)
 end
 
@@ -12,12 +13,12 @@ post('/new_word') do
   word = params.fetch('new_word')
   new_word = Word.new(word)
   new_word.save()
-  redirect(:word_list)
+  redirect(:index)
 end
 
-get('/word_list') do
+get('/index') do
   @all_words = Word.all()
-  erb(:word_list)
+  erb(:index)
 end
 
 get('/word/:id') do

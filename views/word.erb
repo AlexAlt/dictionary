@@ -1,12 +1,16 @@
-<h2><%= @word.show() %></h2>
+<h2><u><%= @word.show() %></u></h2>
  
 <% @all_definitions.each() do |definition| %>
-  <h4><i><%= definition.part_of_speech() %></i></h4>
-  <ul>
-    <li><%= definition.language() %>: <%= definition.description %></li>
-  </ul>
+  <dl class="dl-horizontal">
+    <dt><%= definition.part_of_speech() %></dt>
+    <dd><%= definition.description %></dd>
+    <dd><em><%= definition.language() %></em></dd> 
+  </dl>
+ 
 <% end %>
 
 
-<p><a href="/word/<%= @word.id %>/new_definition/new">Add a definition</a></p>
-<p><a href="/word_list">Back to word list</a></p>
+<ul class="list-inline">
+  <li><a href="/word/<%= @word.id %>/new_definition/new">Add a definition</a></li>
+  <li><a href="/">Home</a></li>
+</ul>
