@@ -1,5 +1,6 @@
 require('word')
 require('rspec')
+# require('definition')
 
 describe(Word) do 
 
@@ -34,5 +35,19 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
-  
+
+  describe('#id') do
+    it('returns the id of the word') do
+      test_word = Word.new('red')
+      test_word.save()
+      expect(test_word.id()).to(eq(1))
+    end
+  end
+
+  # describe('#definitions') do
+  #   it('returns the list of definitions for that word') do
+  #     expect
+  #   end
+  # end
+
 end
