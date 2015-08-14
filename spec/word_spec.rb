@@ -44,6 +44,16 @@ describe(Word) do
     end
   end
 
+  describe('.find') do
+    it('finds a specific word using its id') do
+      test_word = Word.new('red')
+      test_word.save()
+      test_word2 = Word.new('green')
+      test_word2.save()
+      expect(Word.find(1)).to(eq(test_word))
+    end
+  end
+
   # describe('#definitions') do
   #   it('returns the list of definitions for that word') do
   #     expect
