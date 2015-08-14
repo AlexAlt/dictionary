@@ -1,6 +1,6 @@
 require('word')
 require('rspec')
-# require('definition')
+require('definition')
 
 describe(Word) do 
 
@@ -58,6 +58,16 @@ describe(Word) do
     it('returns the list of definitions for that word') do
       test_word = Word.new('red')
       expect(test_word.definitions()).to(eq([]))
+    end
+  end
+
+  describe("#add_definition") do
+    it('adds a definition to the word') do
+      test_word = Word.new('red')
+      test_word.save()
+      test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of the color red")
+      test_word.add_definition(test_definition)
+      expect(test_word.definitions()).to(eq([test_definition]))
     end
   end
 

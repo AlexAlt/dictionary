@@ -1,7 +1,7 @@
 class Word
 
   @@all_words = []
-  @@definitions = []
+  @@all_definitions = []
 
   define_method(:initialize) do |word|
     @word = word
@@ -39,6 +39,10 @@ class Word
   end
 
   define_method(:definitions) do
-    @@definitions
+    @@all_definitions
+  end
+
+  define_method(:add_definition) do |definition|
+    @@all_definitions.push(definition)
   end
 end
