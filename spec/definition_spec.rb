@@ -2,6 +2,11 @@ require('rspec')
 require('definition')
 
 describe(Definition) do
+
+  before() do
+    Definition.clear()
+  end
+  
   describe('#part_of_speech') do
     it('returns the part of speech') do
       test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of the color red")
@@ -34,6 +39,13 @@ describe(Definition) do
       test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of the color red")
       test_definition.save()
       expect(Definition.all()).to(eq([test_definition]))
+    end
+  end
+
+  describe('.clear') do
+    it('clears the definition array') do
+      Definition.clear()
+      expect(Definition.all()).to(eq([]))
     end
   end
 end
