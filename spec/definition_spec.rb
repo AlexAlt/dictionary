@@ -28,4 +28,12 @@ describe(Definition) do
       expect(Definition.all()).to(eq([]))
     end
   end
+
+  describe('#save') do
+    it('saves the definition to an array') do
+      test_definition = Definition.new(:part_of_speech => "adjective", :language => "English", :description => "of the color red")
+      test_definition.save()
+      expect(Definition.all()).to(eq([test_definition]))
+    end
+  end
 end
