@@ -14,16 +14,9 @@ end
 
 describe('the path to a specific word', {:type => :feature}) do
   it('shows the definitions for a specific word') do
-    visit('/word_list')
+    visit('/')
     click_link("red")
     expect(page).to have_content("red")
   end
 end
 
-describe('the path to a definition form', {:type => :feature}) do
-  it('creates form to add a new definition') do
-    visit('/word/:id')
-    click_link('Add a definition')
-    expect(page).to have_content("Add a new definition to your word:")
-  end
-end
