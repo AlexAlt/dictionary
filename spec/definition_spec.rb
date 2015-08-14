@@ -22,4 +22,10 @@ describe(Definition) do
       expect(test_definition.description()).to(eq("of the color red"))
     end
   end
+
+  describe('.all') do
+    it('initially returns an empty array') do
+      expect(Definition.all()).to(eq([]))
+    end
+  end
 end
