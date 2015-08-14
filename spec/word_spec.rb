@@ -54,10 +54,11 @@ describe(Word) do
     end
   end
 
-  # describe('#definitions') do
-  #   it('returns the list of definitions for that word') do
-  #     expect
-  #   end
-  # end
+  describe('#definitions') do
+    it('returns the list of definitions for that word') do
+      test_word = Word.new('red')
+      expect(test_word.definitions()).to(eq([]))
+    end
+  end
 
 end

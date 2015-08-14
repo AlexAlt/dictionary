@@ -1,6 +1,7 @@
 class Word
 
   @@all_words = []
+  @@definitions = []
 
   define_method(:initialize) do |word|
     @word = word
@@ -35,5 +36,9 @@ class Word
       end
     end
     found_word
+  end
+
+  define_method(:definitions) do
+    @@definitions
   end
 end
