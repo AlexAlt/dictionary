@@ -22,5 +22,22 @@ end
 
 get('/word/:id') do
   @word = Word.find(params.fetch('id').to_i())
+  @all_definitions = @word.definitions()
   erb(:word)
+end
+
+get('/word/:id/new_definition/new') do
+  @word = Word.find(params.fetch('id').to_i())
+  erb(:definition_form)
+end
+
+post('/new_definition') do
+  @word = Word.find(params.fetch('id').to_i())
+  id = params.fetch('id')
+  description = params.fetch('description')
+  part_of_speech = params.fetch('part_of_speech')
+  language = params.fetch('language')
+  new_definition = Definition.new(:part_of_speech => part_of_speech, :language => language, :description => description)
+  @word.add_definition(new_definition)
+  redirect("/word/#{id}")
 end

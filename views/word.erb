@@ -1,3 +1,9 @@
 <h2><%= @word.show() %></h2>
+ 
+ <% @all_definitions.each() do |definition| %>
+ 	<p><%= definition.part_of_speech() %></p>
+ 	<p><%= definition.language() %></p>
+ 	<p><%= definition.description %></p>
+ <% end %>
 
-<a href="/word/<%= @word.id %>/definition/new">Add a definition</a>
+<a href="/word/<%= @word.id %>/new_definition/new">Add a definition</a>
