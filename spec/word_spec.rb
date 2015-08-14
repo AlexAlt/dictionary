@@ -2,6 +2,11 @@ require('word')
 require('rspec')
 
 describe(Word) do 
+
+  before() do
+    Word.clear()
+  end
+
   describe('#show') do
     it('returns the word') do
       test_word = Word.new('red')
@@ -29,4 +34,5 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
+  
 end
