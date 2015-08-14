@@ -10,7 +10,7 @@ end
 
 post('/new_word') do
   word = params.fetch('new_word')
-  new_word = Word.new(:word => word)
+  new_word = Word.new(word)
   new_word.save()
   redirect(:word_list)
 end

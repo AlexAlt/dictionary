@@ -14,8 +14,8 @@ end
 
 describe('the path to a specific word', {:type => :feature}) do
   it('shows the definitions for a specific word') do
-    visit('/word/:id')
-    click_link('red')
-    expect(page).to have_content("adjective")
+    visit('/word_list')
+    click_link("red")
+    expect(page).to have_content("red")
   end
 end
